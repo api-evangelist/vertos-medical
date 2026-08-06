@@ -1,7 +1,15 @@
 aid: vertos-medical
 name: Vertos Medical
-description: 'Vertos Medical is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Vertos Medical, Inc. is a medical device company founded in 2005 and headquartered
+  in Aliso Viejo, California, that developed the mild (minimally invasive lumbar decompression)
+  procedure for treating lumbar spinal stenosis caused by hypertrophic ligamentum flavum. The
+  mild device kit removes excess ligament tissue through a 5.1 mm treatment portal with no
+  implants, no general anesthesia and no stitches; it received FDA clearance in 2006 and CE mark
+  approval in 2019. Stryker announced a definitive agreement to acquire Vertos Medical in August
+  2024 and completed the acquisition on October 1, 2024, folding the mild procedure into its
+  Interventional Spine business. The vertosmed.com domain now answers every path with a site-wide
+  HTTP 301 redirect to Stryker, and Vertos Medical publishes no developer program, API, SDK or
+  machine-readable specification of its own.'
 url: https://raw.githubusercontent.com/api-evangelist/vertos-medical/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +20,12 @@ created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
+- Medical Devices
+- Health Care
+- Spine
+- Interventional Pain Management
+- Minimally Invasive Surgery
+- Acquired
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +33,42 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/vertos-medical-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/vertos-medical_stock/
+  url: https://www.vertosmed.com/
+- type: About
+  name: Stryker Interventional Spine (successor page vertosmed.com redirects to)
+  url: https://www.stryker.com/us/en/interventional-spine.html
+- type: PressReleases
+  name: Stryker completes acquisition of Vertos Medical, Inc. (October 1, 2024)
+  url: https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-vertos-medical-inc-expanding-interventional-pain-management-solutions.html
+x-enrichment:
+  date: '2026-08-05'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Vertos Medical was acquired by Stryker on October 1, 2024, and vertosmed.com now answers
+    every path — including /robots.txt, /llms.txt, /sitemap.xml and every /.well-known/* probe —
+    with the same site-wide HTTP 301 to Stryker's Interventional Spine page, so no Vertos
+    developer surface survives to profile.
+  evidence:
+  - url: https://www.vertosmed.com/
+    status: 301
+  - url: https://www.vertosmed.com/this-path-definitely-does-not-exist-9z8x7/
+    status: 301
+  - url: https://www.vertosmed.com/.well-known/agent-card.json
+    status: 301
+  - url: https://www.vertosmed.com/llms.txt
+    status: 301
+  - url: https://api.vertosmed.com/
+    status: 0
+  - url: https://developer.vertosmed.com/
+    status: 0
+  - url: https://api.github.com/orgs/vertos-medical
+    status: 404
+  checked: '2026-08-05'
