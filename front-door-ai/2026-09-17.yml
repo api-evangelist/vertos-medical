@@ -7,14 +7,17 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: www.vertosmed.com
   final_host: www.stryker.com
-  ownership: inherited
+  ownership: own
   owner: vertos-medical
   shares_host_with: null
-  inherited_from: vertosmed.com
+  inherited_from: null
+  alias_of: vertosmed.com
   verdict: silent
-  score: null
+  score: 0
+  band: 1
+  band_label: silent
   host_score: 0
-  density: null
+  density: 0.0
   words: 1390
   tiers:
     agentic: 0
